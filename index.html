@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sugar – iOS Nutrition Tracking App</title>
-  <meta name="description" content="Sugar is an easy-to-use iOS nutrition tracker. Count calories, log macros & nutrients to reach your goals: weight loss, muscle gain, diabetes management, or better sleep.">
+  <meta name="description"
+    content="Sugar is an easy-to-use iOS nutrition tracker. Count calories, log macros & nutrients to reach your goals: weight loss, muscle gain, diabetes management, or better sleep.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,51 +37,53 @@
     // }
   }
   </script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <style>
-    
     :root {
       --primary-color: rgba(208, 188, 255, 1);
       --primary-container-color: rgba(79, 55, 139, 1);
       --on-primary-color: rgba(56, 30, 114, 1);
       --on-primary-container-color: rgba(234, 221, 255, 1);
-    
+
       --secondary-color: rgba(204, 194, 220, 1);
       --secondary-container-color: rgba(74, 68, 88, 1);
       --on-secondary-color: rgba(51, 45, 65, 1);
       --on-secondary-container-color: rgba(232, 222, 248, 1);
-    
+
       --tertiary-color: rgba(239, 184, 200, 1);
       --tertiary-container-color: rgba(99, 59, 72, 1);
       --on-tertiary-color: rgba(73, 37, 50, 1);
       --on-tertiary-container-color: rgba(255, 216, 228, 1);
-    
+
       --background-color: rgba(28, 27, 31, 1);
       --surface-color: rgba(28, 27, 31, 1);
       --surface-variant-color: rgba(73, 69, 79, 1);
       --surface-disabled-color: rgba(230, 225, 229, 0.12);
-    
+
       --on-surface-color: rgba(230, 225, 229, 1);
       --on-surface-variant-color: rgba(202, 196, 208, 1);
       --on-surface-disabled-color: rgba(230, 225, 229, 0.38);
-    
+
       --error-color: rgba(242, 184, 181, 1);
       --error-container-color: rgba(140, 29, 24, 1);
       --on-error-color: rgba(96, 20, 16, 1);
       --on-error-container-color: rgba(242, 184, 181, 1);
-    
+
       --on-background-color: rgba(230, 225, 229, 1);
       --outline-color: rgba(147, 143, 153, 1);
       --outline-variant-color: rgba(73, 69, 79, 1);
-    
+
       --inverse-surface-color: rgba(230, 225, 229, 1);
       --inverse-on-surface-color: rgba(49, 48, 51, 1);
       --inverse-primary-color: rgba(103, 80, 164, 1);
-    
+
       --shadow-color: rgba(0, 0, 0, 1);
       --scrim-color: rgba(0, 0, 0, 1);
       --backdrop-color: rgba(50, 47, 55, 0.4);
-    
+
       --elevation-level0: transparent;
       --elevation-level1: rgb(37, 35, 42);
       --elevation-level2: rgb(44, 40, 49);
@@ -98,24 +102,15 @@
     body {
       background-color: var(--background-color);
       color: var(--on-surface-color);
-      line-height: 1.5;
       margin: 0 auto;
       max-width: 80rem;
     }
 
     header {
-      background-color: var(--elevation-level1);
+      background-color: var(--background-color);
       color: var(--on-surface-color);
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       padding: 1rem 2rem;
-    }
-    
-    header h1 { /* Changed this H1 to span for semantic reasons, main H1 is in hero */
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
     }
 
     main {
@@ -136,15 +131,25 @@
 
     /* SEO: Ensure only one H1 per page. Main H1 is now in the hero section. */
     h1.page-title {
-        font-size: 4rem;
-        text-align: center;
+      font-size: 4rem;
+      font-weight: 400;
     }
 
-    h2.section-title { /* Renamed from .section-title to be more specific */
+    .page-subtitle {
+      color: var(--on-surface-variant-color);
+      font-size: 2rem;
+      font-weight: 200;
+    }
+
+    .download-button {
+      width: 12rem;
+    }
+
+    h2.section-title {
+      /* Renamed from .section-title to be more specific */
       text-align: center;
       margin-bottom: 8px;
       font-size: 1.5rem;
-      font-weight: bold;
     }
 
     .divider {
@@ -157,7 +162,8 @@
       display: inline-block;
       background-color: var(--primary-color);
       color: #fff;
-      text-decoration: none; /* Added for <a> tag styling */
+      text-decoration: none;
+      /* Added for <a> tag styling */
       border: none;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -171,23 +177,26 @@
       opacity: 0.9;
     }
 
-    .features-list, .customization-list {
+    .features-list,
+    .customization-list {
       list-style: none;
       padding: 0;
     }
 
-    .features-list li, .customization-list li {
+    .features-list li,
+    .customization-list li {
       display: flex;
       align-items: flex-start;
       margin-bottom: 16px;
     }
 
     /* SEO/Accessibility: Using role=img and aria-label on spans for emojis */
-    .features-list li .icon, .customization-list li .icon {
+    .features-list li .icon,
+    .customization-list li .icon {
       margin-right: 8px;
       color: var(--primary-color);
-      font-weight: bold; /* Keep visual style */
-      display: inline-block; /* Needed for screen reader focus */
+      display: inline-block;
+      /* Needed for screen reader focus */
     }
 
     .card {
@@ -204,24 +213,37 @@
       font-size: 0.85rem;
       margin-top: 24px;
     }
-    
-    .footer-links a { /* Style for new footer links */
-        color: var(--primary-color);
-        text-decoration: none;
-        margin: 0 10px;
+
+    .footer-links a {
+      /* Style for new footer links */
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 10px;
     }
-    
+
     .footer-links a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
     /* Spacers */
-    .spacer-xxsmall { height: 8px; }
-    .spacer-xsmall { height: 16px; }
-    .spacer-small { height: 24px; }
-    .spacer-medium { height: 32px; }
+    .spacer-xxsmall {
+      height: 8px;
+    }
+
+    .spacer-xsmall {
+      height: 16px;
+    }
+
+    .spacer-small {
+      height: 24px;
+    }
+
+    .spacer-medium {
+      height: 32px;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -238,17 +260,17 @@
             The smart nutrition tracking app.
           </h1>
           <div class="spacer-xsmall"></div>
-          <p style="font-size: 1.3rem; color: var(--on-surface-variant-color);">
+          <p class="page-subtitle">
             Built by patients to be the world's simpliest way to track your nutrients.
           </p>
           <div class="spacer-medium"></div>
           <div>
             <a href="#YOUR_APP_STORE_LINK">
-              <img src="download-ios.png" alt="Download on iOS" />
+              <img class="download-button" src="download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
           </div>
         </div>
-        <div style="flex: 1; text-align: center;">
+        <div style="flex: 1; text-align: center; background-color: var(--elevation-level3); height: 100%">
           <img src="placeholder-image.png" alt="Placeholder image" style="max-width: 100%;" />
         </div>
       </div>
@@ -272,7 +294,8 @@
           <div>
             <strong>Monitor Key Nutrients & Macros</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Track calories, macronutrients (protein, carbs, fat), vitamins, and minerals like iron against your personal health goals.
+              Track calories, macronutrients (protein, carbs, fat), vitamins, and minerals like iron against your
+              personal health goals.
             </span>
           </div>
         </li>
@@ -294,9 +317,12 @@
       <h2 class="section-title">Personalized Nutrition Insights for Your Goals</h2>
       <div class="spacer-small"></div>
       <div class="card">
-         <h3 style="font-weight: bold; margin-bottom: 8px;"><span role="img" aria-label="Robot face icon">🤖</span> Your Personal AI Advisor</h3>
+        <h3 style="margin-bottom: 8px;"><span role="img" aria-label="Robot face icon">🤖</span> Your Personal AI Advisor
+        </h3>
         <p style="color: var(--on-surface-variant-color);">
-          Receive personalized feedback based on your food logs and goals. Understand your eating patterns and get actionable advice to improve your nutrition, whether managing weight, ensuring adequate protein intake (e.g., for GLP-1 users or muscle gain), or supporting specific dietary needs.
+          Receive personalized feedback based on your food logs and goals. Understand your eating patterns and get
+          actionable advice to improve your nutrition, whether managing weight, ensuring adequate protein intake (e.g.,
+          for GLP-1 users or muscle gain), or supporting specific dietary needs.
         </p>
       </div>
     </section>
@@ -312,7 +338,8 @@
           <div>
             <strong>Set Custom Goals</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Define targets for calories, macros, or any nutrient that matters to you, supporting diets like keto, high-protein, or diabetic-friendly plans.
+              Define targets for calories, macros, or any nutrient that matters to you, supporting diets like keto,
+              high-protein, or diabetic-friendly plans.
             </span>
           </div>
         </li>
@@ -327,7 +354,7 @@
           </div>
         </li>
         <li>
-           <span class="icon" role="img" aria-label="Pot of food icon">🍲</span>
+          <span class="icon" role="img" aria-label="Pot of food icon">🍲</span>
           <div>
             <strong>Manage Recipes & Meals</strong><br />
             <span style="color: var(--on-surface-variant-color);">
@@ -355,14 +382,16 @@
     <div class="divider"></div>
 
     <footer class="footer">
-      <p>© 2025 Sugar App Team. All rights reserved.</p> <div class="spacer-small"></div>
+      <p>© 2025 Sugar App Team. All rights reserved.</p>
+      <div class="spacer-small"></div>
       <div class="footer-links">
-          <a href="mailto:support@example.com?subject=Sugar%20App%20Support">Support & Contact</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
+        <a href="mailto:support@example.com?subject=Sugar%20App%20Support">Support & Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </footer>
   </main>
 
 </body>
+
 </html>

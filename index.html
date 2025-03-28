@@ -2,7 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sugar Marketing Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sugar – iOS Nutrition Tracking App for Healthy Eating</title>
+
+  <meta name="description" content="Sugar is an easy-to-use iOS nutrition tracker. Count calories, log macros & nutrients to reach your goals: weight loss, muscle gain, diabetes management, or better sleep.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sugar - Nutrition Tracker",
+    "operatingSystem": "iOS",
+    "applicationCategory": "HealthApplication",
+    "description": "Sugar is an iOS nutrition tracking app that makes healthy eating sweet and simple. Track calories, macros, and nutrients tailored for weight loss, muscle gain, diabetes support, better sleep and overall health.",
+    "softwareVersion": "1.0.0", // Update with actual version if known
+    "offers": {
+      "@type": "Offer",
+      "price": "0", // Assuming free download, adjust if needed
+      "priceCurrency": "USD",
+      "availability": "http://schema.org/InStock",
+      "url": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID" // Replace with your actual App Store URL
+    },
+    "downloadUrl": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID", // Replace with your actual App Store URL
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sugar App Team", // Replace with your company/developer name
+      "url": "https://yourwebsite.com" // Replace with your website/company URL if you have one
+    }
+    // Optional: Add aggregateRating if you have verifiable ratings
+    // "aggregateRating": {
+    //   "@type": "AggregateRating",
+    //   "ratingValue": "4.8",
+    //   "ratingCount": "250"
+    // }
+  }
+  </script>
+
   <style>
     :root {
       --background-color: #fafafa;
@@ -35,7 +71,7 @@
       justify-content: space-between;
       padding: 1rem 2rem;
     }
-    header h1 {
+    header h1 { /* Changed this H1 to span for semantic reasons, main H1 is in hero */
       font-size: 1.5rem;
       display: flex;
       align-items: center;
@@ -66,7 +102,14 @@
       text-align: center;
     }
 
-    .section-title {
+    /* SEO: Ensure only one H1 per page. Main H1 is now in the hero section. */
+    h1.page-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    h2.section-title { /* Renamed from .section-title to be more specific */
       text-align: center;
       margin-bottom: 8px;
       font-size: 1.5rem;
@@ -83,6 +126,7 @@
       display: inline-block;
       background-color: var(--primary-color);
       color: #fff;
+      text-decoration: none; /* Added for <a> tag styling */
       border: none;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -107,10 +151,12 @@
       margin-bottom: 16px;
     }
 
+    /* SEO/Accessibility: Using role=img and aria-label on spans for emojis */
     .features-list li .icon, .customization-list li .icon {
       margin-right: 8px;
       color: var(--primary-color);
-      font-weight: bold;
+      font-weight: bold; /* Keep visual style */
+      display: inline-block; /* Needed for screen reader focus */
     }
 
     .card {
@@ -127,6 +173,15 @@
       font-size: 0.85rem;
       margin-top: 24px;
     }
+    .footer-links a { /* Style for new footer links */
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
 
     /* Spacers */
     .spacer-xxsmall { height: 8px; }
@@ -137,61 +192,60 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1>🍭 Sugar</h1>
-    <!-- Theme toggle placeholder (non-functional in static HTML) -->
-    <button type="button">Toggle Theme</button>
+    <span style="font-size: 1.5rem; display: flex; align-items: center; font-weight: bold;">
+      <span role="img" aria-label="Lollipop icon">🍭</span> Sugar
+    </span>
+    <button type="button" title="Theme toggle (requires JavaScript)">Toggle Theme</button>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Hero Section -->
     <section class="section">
-      <h2 class="center-text" style="font-size: 2rem;">🍭 Sugar</h2>
+      <h1 class="page-title">
+        <span role="img" aria-label="Lollipop icon">🍭</span> Sugar: Your Sweet iOS Nutrition Tracking App
+      </h1>
       <div class="spacer-xsmall"></div>
       <p class="center-text" style="font-size: 1.3rem; color: var(--on-surface-variant-color);">
-        The new sweetness in nutrition tracking.
+        The new sweetness in nutrition tracking. Effortlessly log meals, count calories, track macros, and reach your health goals, whether it's weight loss, muscle gain, managing diabetes, or improving sleep.
       </p>
       <div class="spacer-medium"></div>
       <div class="center-text">
-        <button class="cta-button">
+        <a href="#YOUR_APP_STORE_LINK" class="cta-button">
           <span>Download for iOS</span>
-        </button>
+        </a>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Features Section -->
     <section class="section">
-      <h2 class="section-title">Track with Precision &amp; Ease</h2>
+      <h2 class="section-title">Track Calories, Macros, and Nutrients with Ease</h2>
       <div class="spacer-small"></div>
       <ul class="features-list">
         <li>
-          <span class="icon">🍎</span>
+          <span class="icon" role="img" aria-label="Red apple icon">🍎</span>
           <div>
             <strong>Log Foods Effortlessly</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Quickly add meals from a vast database or scan barcodes.
+              Quickly add meals using our vast food database or simply scan barcodes. Perfect for your daily food diary.
             </span>
           </div>
         </li>
         <li>
-          <span class="icon">📊</span>
+          <span class="icon" role="img" aria-label="Bar chart icon">📊</span>
           <div>
-            <strong>Monitor Key Nutrients</strong><br />
+            <strong>Monitor Key Nutrients & Macros</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Track calories, macros, vitamins, and minerals against your goals.
+              Track calories, macronutrients (protein, carbs, fat), vitamins, and minerals like iron against your personal health goals.
             </span>
           </div>
         </li>
         <li>
-          <span class="icon">✔️</span>
+          <span class="icon" role="img" aria-label="Checkmark icon">✔️</span>
           <div>
             <strong>Visualize Your Progress</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              See daily totals and trends with intuitive charts and progress bars.
+              See daily totals and trends with intuitive charts and progress bars. Stay motivated on your journey.
             </span>
           </div>
         </li>
@@ -200,52 +254,48 @@
 
     <div class="divider"></div>
 
-    <!-- AI Insights Section -->
     <section class="section">
-      <h2 class="section-title">Get Smarter Insights</h2>
+      <h2 class="section-title">Personalized Nutrition Insights for Your Goals</h2>
       <div class="spacer-small"></div>
       <div class="card">
-        <h3 style="font-weight: bold; margin-bottom: 8px;">🤖 Your Personal AI Advisor</h3>
+         <h3 style="font-weight: bold; margin-bottom: 8px;"><span role="img" aria-label="Robot face icon">🤖</span> Your Personal AI Advisor</h3>
         <p style="color: var(--on-surface-variant-color);">
-          Receive personalized feedback based on your food logs and goals. Understand your eating patterns
-          and get actionable advice to improve your nutrition.
+          Receive personalized feedback based on your food logs and goals. Understand your eating patterns and get actionable advice to improve your nutrition, whether managing weight, ensuring adequate protein intake (e.g., for GLP-1 users or muscle gain), or supporting specific dietary needs.
         </p>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Customization Section -->
     <section class="section">
-      <h2 class="section-title">Make Sugar Yours</h2>
+      <h2 class="section-title">Customize Your Nutrition Goals & App Experience</h2>
       <div class="spacer-small"></div>
       <ul class="customization-list">
         <li>
-          <span class="icon">🎯</span>
+          <span class="icon" role="img" aria-label="Target icon">🎯</span>
           <div>
             <strong>Set Custom Goals</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Define targets for any nutrient that matters to you.
+              Define targets for calories, macros, or any nutrient that matters to you, supporting diets like keto, high-protein, or diabetic-friendly plans.
             </span>
           </div>
         </li>
         <li>
-          <span class="icon">🌓</span>
+          <span class="icon" role="img" aria-label="Half moon icon">🌓</span>
           <div>
             <strong>Choose Your Appearance</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Switch between Light and Dark modes anytime. Current: Light
+              Switch between Light and Dark modes anytime. (Current: Light - Static)
             </span><br />
-            <!-- Dummy button for demonstration -->
-            <button style="margin-top: 8px;">Toggle Theme</button>
+            <button style="margin-top: 8px;" title="Theme toggle (requires JavaScript)">Toggle Theme</button>
           </div>
         </li>
         <li>
-          <span class="icon">🍲</span>
+           <span class="icon" role="img" aria-label="Pot of food icon">🍲</span>
           <div>
-            <strong>Manage Recipes</strong><br />
+            <strong>Manage Recipes & Meals</strong><br />
             <span style="color: var(--on-surface-variant-color);">
-              Save your favorite meals for quick logging later.
+              Save your favorite custom meals and recipes for quick logging later. Build your personal food library.
             </span>
           </div>
         </li>
@@ -254,28 +304,27 @@
 
     <div class="divider"></div>
 
-    <!-- Call to Action Section -->
     <section class="section" style="background-color: var(--background-color); margin-bottom: 0; padding-bottom: 40px;">
       <h2 class="center-text" style="font-size: 1.5rem; color: var(--on-surface-color);">
-        Ready to sweeten your tracking?
+        Ready to sweeten your nutrition tracking?
       </h2>
       <div class="spacer-medium"></div>
       <div class="center-text">
-        <button class="cta-button">
+        <a href="#YOUR_APP_STORE_LINK" class="cta-button">
           <span>Download Sugar Now</span>
-        </button>
+        </a>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Footer Section -->
     <footer class="footer">
-      <p>© 2025 Sugar App. All rights reserved.</p>
-      <div class="spacer-xxsmall"></div>
-      <button style="background: none; border: none; color: var(--primary-color); cursor: pointer;">
-        Support &amp; Contact
-      </button>
+      <p>© 2025 Sugar App Team. All rights reserved.</p> <div class="spacer-small"></div>
+      <div class="footer-links">
+          <a href="mailto:support@example.com?subject=Sugar%20App%20Support">Support & Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+      </div>
     </footer>
   </main>
 

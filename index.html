@@ -39,12 +39,12 @@
   <style>
     
     :root {
-      --background-color: rgba(33, 0, 93, 1);
+      --background-color: rgba(28, 27, 31, 1);
       --surface-color: #ffffff;
       --surface-variant-color: #f0f0f0;
-      --on-surface-color: #000000;
+      --on-surface-color: rgba(230, 225, 229, 1);
       --on-surface-variant-color: #555555;
-      --primary-color: #6200ee;
+      --primary-color: rgba(208, 188, 255, 1);
       --border-color: #dddddd;
     }
 
@@ -62,8 +62,8 @@
     }
 
     header {
-      background-color: var(--primary-color);
-      color: #fff;
+      background-color: var(--background-color);
+      color: var(--on-surface-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -194,7 +194,7 @@
 <body>
 
   <header>
-    <span style="font-size: 1.5rem; display: flex; align-items: center; font-weight: bold;">
+    <span style="font-size: 1.5rem; display: flex; align-items: center;">
       <span role="img" aria-label="Lollipop icon">🍭</span> Sugar
     </span>
   </header>

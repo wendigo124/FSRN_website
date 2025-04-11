@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "AYCDG243RJ.com.subscription.wendigo", // Replace with your actual IDs!
+        "appID": "AYCDG243RJ.com.subscription.wendigo",
         "paths": [
           "/reset-password/*"
         ]

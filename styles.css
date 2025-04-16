@@ -96,6 +96,12 @@ body {
   }
 }
 
+@media (max-width: 620px) {
+  body {
+    font-size: calc(8px + (8 * ((100vw - 300px) / (620 - 300))));
+  }
+}
+
 /* BRAND */
 
 .logo {

@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Füd – iOS Nutrition Tracking App</title>
-  <meta name="description"
-    content="Füd is an easy-to-use iOS nutrition tracker. Count calories, log macros & nutrients to reach your goals: weight loss, muscle gain, diabetes management, or better sleep.">
+  <meta name="description" content="Füd is an easy-to-use iOS nutrition tracker. Count calories, log macros & nutrients to reach your goals: weight loss, muscle gain, diabetes management, or better sleep.">
+  <meta name="author" content="Füd App Team">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -15,385 +15,417 @@
     "operatingSystem": "iOS",
     "applicationCategory": "HealthApplication",
     "description": "Füd is an iOS nutrition tracking app that makes healthy eating sweet and simple. Track calories, macros, and nutrients tailored for weight loss, muscle gain, diabetes support, better sleep and overall health.",
-    "softwareVersion": "1.0.0", // Update with actual version if known
+    "softwareVersion": "1.0.0",
     "offers": {
       "@type": "Offer",
-      "price": "0", // Assuming free download, adjust if needed
+      "price": "0",
       "priceCurrency": "USD",
       "availability": "http://schema.org/InStock",
-      "url": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID" // Replace with your actual App Store URL
+      "url": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID" // Replace
     },
-    "downloadUrl": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID", // Replace with your actual App Store URL
+    "downloadUrl": "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID", // Replace
     "publisher": {
       "@type": "Organization",
-      "name": "Füd App Team", // Replace with your company/developer name
-      "url": "https://yourwebsite.com" // Replace with your website/company URL if you have one
+      "name": "Füd App Team",
+      "url": "https://myfud.io"
     }
-    // Optional: Add aggregateRating if you have verifiable ratings
-    // "aggregateRating": {
-    //   "@type": "AggregateRating",
-    //   "ratingValue": "4.8",
-    //   "ratingCount": "250"
-    // }
+    // "aggregateRating": { ... } // Optional
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
   <style>
+    /* CSS Variables - Füd Theme */
     :root {
       --primary-color: rgba(208, 188, 255, 1);
       --primary-container-color: rgba(79, 55, 139, 1);
       --on-primary-color: rgba(56, 30, 114, 1);
       --on-primary-container-color: rgba(234, 221, 255, 1);
-
       --secondary-color: rgba(204, 194, 220, 1);
       --secondary-container-color: rgba(74, 68, 88, 1);
       --on-secondary-color: rgba(51, 45, 65, 1);
       --on-secondary-container-color: rgba(232, 222, 248, 1);
-
       --tertiary-color: rgba(239, 184, 200, 1);
       --tertiary-container-color: rgba(99, 59, 72, 1);
       --on-tertiary-color: rgba(73, 37, 50, 1);
       --on-tertiary-container-color: rgba(255, 216, 228, 1);
-
       --background-color: rgba(28, 27, 31, 1);
       --surface-color: rgba(28, 27, 31, 1);
       --surface-variant-color: rgba(73, 69, 79, 1);
+      --surface-container-color: rgba(44, 40, 49, 1);
+      --surface-container-high-color: rgba(49, 44, 56, 1);
       --surface-disabled-color: rgba(230, 225, 229, 0.12);
-
       --on-surface-color: rgba(230, 225, 229, 1);
       --on-surface-variant-color: rgba(202, 196, 208, 1);
       --on-surface-disabled-color: rgba(230, 225, 229, 0.38);
-
       --error-color: rgba(242, 184, 181, 1);
       --error-container-color: rgba(140, 29, 24, 1);
       --on-error-color: rgba(96, 20, 16, 1);
       --on-error-container-color: rgba(242, 184, 181, 1);
-
       --on-background-color: rgba(230, 225, 229, 1);
       --outline-color: rgba(147, 143, 153, 1);
       --outline-variant-color: rgba(73, 69, 79, 1);
-
       --inverse-surface-color: rgba(230, 225, 229, 1);
       --inverse-on-surface-color: rgba(49, 48, 51, 1);
       --inverse-primary-color: rgba(103, 80, 164, 1);
-
       --shadow-color: rgba(0, 0, 0, 1);
       --scrim-color: rgba(0, 0, 0, 1);
       --backdrop-color: rgba(50, 47, 55, 0.4);
 
-      --elevation-level0: transparent;
-      --elevation-level1: rgb(37, 35, 42);
-      --elevation-level2: rgb(44, 40, 49);
-      --elevation-level3: rgb(49, 44, 56);
-      --elevation-level4: rgb(51, 46, 58);
-      --elevation-level5: rgb(52, 49, 63);
+      /* Typography */
+      --font-family-base: 'Roboto', Arial, sans-serif;
+      --line-height-base: 1.6;
+
+      /* Spacing Scale (0-6) */
+      --space-0: 0;
+      --space-1: 0.25rem; /* 4px */
+      --space-2: 0.5rem;  /* 8px */
+      --space-3: 1rem;    /* 16px */
+      --space-4: 1.5rem;  /* 24px */
+      --space-5: 2rem;    /* 32px */
+      --space-6: 3rem;    /* 48px */
+      --space-8: 4rem;    /* 64px - Added for larger gaps like Monokai */
+      --space-10: 5rem;   /* 80px */
+      --space-12: 6rem;   /* 96px */
+
+
+      /* Borders */
+      --border-radius: 12px;
+      --border-width: 1px;
+      --border-color: var(--outline-variant-color);
+
+      /* Grid */
+      --grid-gap: var(--space-4); /* Default gap */
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Roboto, Arial, sans-serif;
-    }
-
+    /* Reset and Base Styles */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 100%; scroll-behavior: smooth; }
     body {
       background-color: var(--background-color);
-      color: var(--on-surface-color);
-      margin: 0 auto;
-      max-width: 80rem;
+      color: var(--on-background-color);
+      font-family: var(--font-family-base);
+      line-height: var(--line-height-base);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    header {
+    /* Basic Typography */
+    h1, h2, h3, h4, h5, h6 { font-weight: 500; line-height: 1.2; color: var(--on-surface-color); }
+    h1 { font-size: 3rem; font-weight: 300;}
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { color: var(--on-surface-variant-color); margin-bottom: var(--space-3); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { font-weight: 600; color: var(--on-surface-color); }
+
+    /* Container Wrapper */
+    .wrapper {
+      max-width: 80rem; /* 1280px */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--space-4);
+      padding-right: var(--space-4);
+    }
+
+    /* Grid System (Inspired by Monokai Pro CSS) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gap);
+    }
+    /* Default: Span 12 columns */
+    .col-span-12 { grid-column: span 12 / span 12; }
+    .col-span-11 { grid-column: span 11 / span 11; }
+    .col-span-10 { grid-column: span 10 / span 10; }
+    .col-span-9 { grid-column: span 9 / span 9; }
+    .col-span-8 { grid-column: span 8 / span 8; }
+    .col-span-7 { grid-column: span 7 / span 7; }
+    .col-span-6 { grid-column: span 6 / span 6; }
+    .col-span-5 { grid-column: span 5 / span 5; }
+    .col-span-4 { grid-column: span 4 / span 4; }
+    .col-span-3 { grid-column: span 3 / span 3; }
+    .col-span-2 { grid-column: span 2 / span 2; }
+    .col-span-1 { grid-column: span 1 / span 1; }
+
+    /* Medium Breakpoint (e.g., tablets, small laptops) */
+    @media (min-width: 768px) {
+      .md-col-span-12 { grid-column: span 12 / span 12; }
+      .md-col-span-11 { grid-column: span 11 / span 11; }
+      .md-col-span-10 { grid-column: span 10 / span 10; }
+      .md-col-span-9 { grid-column: span 9 / span 9; }
+      .md-col-span-8 { grid-column: span 8 / span 8; }
+      .md-col-span-7 { grid-column: span 7 / span 7; }
+      .md-col-span-6 { grid-column: span 6 / span 6; }
+      .md-col-span-5 { grid-column: span 5 / span 5; }
+      .md-col-span-4 { grid-column: span 4 / span 4; }
+      .md-col-span-3 { grid-column: span 3 / span 3; }
+      .md-col-span-2 { grid-column: span 2 / span 2; }
+      .md-col-span-1 { grid-column: span 1 / span 1; }
+    }
+
+    /* Large Breakpoint (e.g., desktops) */
+    @media (min-width: 1024px) {
+      .lg-col-span-12 { grid-column: span 12 / span 12; }
+      .lg-col-span-11 { grid-column: span 11 / span 11; }
+      .lg-col-span-10 { grid-column: span 10 / span 10; }
+      .lg-col-span-9 { grid-column: span 9 / span 9; }
+      .lg-col-span-8 { grid-column: span 8 / span 8; }
+      .lg-col-span-7 { grid-column: span 7 / span 7; }
+      .lg-col-span-6 { grid-column: span 6 / span 6; }
+      .lg-col-span-5 { grid-column: span 5 / span 5; }
+      .lg-col-span-4 { grid-column: span 4 / span 4; }
+      .lg-col-span-3 { grid-column: span 3 / span 3; }
+      .lg-col-span-2 { grid-column: span 2 / span 2; }
+      .lg-col-span-1 { grid-column: span 1 / span 1; }
+    }
+
+    /* Spacing Utilities (m=margin, p=padding, t=top, b=bottom, x=left/right, y=top/bottom, numbers 0-6) */
+    .m-0  { margin:        var(--space-0); }
+    .mt-0 { margin-top:    var(--space-0); }
+    .mb-0 { margin-bottom: var(--space-0); }
+    .p-0  { padding:       var(--space-0); }
+    .pt-0 { padding-top:   var(--space-0); }
+    .pb-0 { padding-bottom:var(--space-0); }
+    /* Add other spacing utilities as needed (e.g., mx-auto, py-4, etc.) */
+    .mt-1 { margin-top:    var(--space-1); } .mb-1 { margin-bottom: var(--space-1); } .p-1 { padding: var(--space-1); } .pt-1 { padding-top: var(--space-1); } .pb-1 { padding-bottom: var(--space-1); }
+    .mt-2 { margin-top:    var(--space-2); } .mb-2 { margin-bottom: var(--space-2); } .p-2 { padding: var(--space-2); } .pt-2 { padding-top: var(--space-2); } .pb-2 { padding-bottom: var(--space-2); }
+    .mt-3 { margin-top:    var(--space-3); } .mb-3 { margin-bottom: var(--space-3); } .p-3 { padding: var(--space-3); } .pt-3 { padding-top: var(--space-3); } .pb-3 { padding-bottom: var(--space-3); }
+    .mt-4 { margin-top:    var(--space-4); } .mb-4 { margin-bottom: var(--space-4); } .p-4 { padding: var(--space-4); } .pt-4 { padding-top: var(--space-4); } .pb-4 { padding-bottom: var(--space-4); }
+    .mt-5 { margin-top:    var(--space-5); } .mb-5 { margin-bottom: var(--space-5); } .p-5 { padding: var(--space-5); } .pt-5 { padding-top: var(--space-5); } .pb-5 { padding-bottom: var(--space-5); }
+    .mt-6 { margin-top:    var(--space-6); } .mb-6 { margin-bottom: var(--space-6); } .p-6 { padding: var(--space-6); } .pt-6 { padding-top: var(--space-6); } .pb-6 { padding-bottom: var(--space-6); }
+    .mt-8 { margin-top:    var(--space-8); } .mb-8 { margin-bottom: var(--space-8); } .p-8 { padding: var(--space-8); } .pt-8 { padding-top: var(--space-8); } .pb-8 { padding-bottom: var(--space-8); }
+    .mt-10 { margin-top:   var(--space-10); } .mb-10 { margin-bottom: var(--space-10); } .p-10 { padding: var(--space-10); } .pt-10 { padding-top: var(--space-10); } .pb-10 { padding-bottom: var(--space-10); }
+    .mt-12 { margin-top:   var(--space-12); } .mb-12 { margin-bottom: var(--space-12); } .p-12 { padding: var(--space-12); } .pt-12 { padding-top: var(--space-12); } .pb-12 { padding-bottom: var(--space-12); }
+
+    /* Layout Utilities */
+    .text-center { text-align: center; }
+    .d-flex { display: flex; }
+    .flex-column { flex-direction: column; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-1 { gap: var(--space-1); }
+    .gap-2 { gap: var(--space-2); }
+    .gap-3 { gap: var(--space-3); }
+    .gap-4 { gap: var(--space-4); }
+    .gap-5 { gap: var(--space-5); }
+    .gap-6 { gap: var(--space-6); }
+
+    /* Component Styles (Keep minimal, rely on utilities) */
+    .header {
       background-color: var(--background-color);
-      color: var(--on-surface-color);
-      display: flex;
-      padding: 1rem 2rem;
+      border-bottom: var(--border-width) solid var(--border-color);
     }
-
-    main {
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    .section {
-      background-color: var(--elevation-level1);
-      border-radius: 16px;
-      padding: 16px;
-      margin: 16px 0;
-    }
-
-    .center-text {
-      text-align: center;
-    }
-
-    /* SEO: Ensure only one H1 per page. Main H1 is now in the hero section. */
-    h1.page-title {
-      font-size: 4rem;
-      font-weight: 400;
-    }
-
-    .page-subtitle {
-      color: var(--on-surface-variant-color);
-      font-size: 2rem;
-      font-weight: 200;
-    }
-
-    .download-button {
-      width: 12rem;
-    }
-
-    h2.section-title {
-      /* Renamed from .section-title to be more specific */
-      text-align: center;
-      margin-bottom: 8px;
+    .logo {
       font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--on-surface-color);
+      text-decoration: none;
     }
 
-    .divider {
-      height: 1px;
-      background-color: var(--border-color);
-      margin: 16px 0;
+    .section-bg {
+      background-color: var(--surface-container-color);
+      border-radius: var(--border-radius);
     }
+    .card-bg {
+       background-color: var(--surface-container-high-color);
+       border-radius: var(--border-radius);
+    }
+
+    .hero-image-container {
+       text-align: center;
+       background-color: var(--surface-container-high-color);
+       border-radius: var(--border-radius);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .hero-image {
+       max-width: 100%;
+       height: auto;
+       border-radius: calc(var(--border-radius) / 2);
+       display: block;
+    }
+    .download-button-img {
+      width: 12rem;
+      height: auto;
+    }
+
+    .list-unstyled { list-style: none; padding: 0; }
+    .icon {
+       font-size: 1.5rem;
+       color: var(--primary-color);
+       flex-shrink: 0;
+       margin-top: 0.1em; /* Adjust vertical alignment */
+    }
+    .feature-item strong, .customization-item strong {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-size: 1.1rem;
+    }
+    .feature-item span, .customization-item span {
+       color: var(--on-surface-variant-color);
+    }
+     .customization-item button {
+      background-color: var(--secondary-container-color);
+      color: var(--on-secondary-container-color);
+      border: none;
+      padding: var(--space-2) var(--space-3);
+      border-radius: calc(var(--border-radius) / 2);
+      cursor: pointer;
+      font-size: 0.875rem;
+      margin-top: var(--space-2);
+    }
+    .customization-item button:hover { opacity: 0.9; }
 
     .cta-button {
       display: inline-block;
       background-color: var(--primary-color);
-      color: #fff;
+      color: var(--on-primary-color);
       text-decoration: none;
-      /* Added for <a> tag styling */
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 4px;
+      padding: var(--space-3) var(--space-5);
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: calc(var(--border-radius) * 2);
       cursor: pointer;
-      margin-top: 16px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      text-align: center;
     }
-
     .cta-button:hover {
-      opacity: 0.9;
+      background-color: var(--secondary-color);
+      color: var(--on-secondary-color);
+      text-decoration: none;
+      transform: scale(1.03);
     }
-
-    .features-list,
-    .customization-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .features-list li,
-    .customization-list li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 16px;
-    }
-
-    /* SEO/Accessibility: Using role=img and aria-label on spans for emojis */
-    .features-list li .icon,
-    .customization-list li .icon {
-      margin-right: 8px;
-      color: var(--primary-color);
-      display: inline-block;
-      /* Needed for screen reader focus */
-    }
-
-    .card {
-      background-color: var(--surface-variant-color);
-      border-radius: 8px;
-      padding: 16px;
-      margin-top: 8px;
-    }
+    .cta-button:active { transform: scale(0.98); }
 
     .footer {
-      border-top: 1px solid var(--border-color);
+      border-top: var(--border-width) solid var(--border-color);
       text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      margin-top: 24px;
+      font-size: 0.875rem;
+      color: var(--on-surface-variant-color);
     }
-
     .footer-links a {
-      /* Style for new footer links */
-      color: var(--primary-color);
-      text-decoration: none;
-      margin: 0 10px;
+      color: var(--on-surface-variant-color);
+      margin: 0 var(--space-2);
     }
-
     .footer-links a:hover {
+      color: var(--primary-color);
       text-decoration: underline;
-    }
-
-    /* Spacers */
-    .spacer-xxsmall {
-      height: 8px;
-    }
-
-    .spacer-xsmall {
-      height: 16px;
-    }
-
-    .spacer-small {
-      height: 24px;
-    }
-
-    .spacer-medium {
-      height: 32px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <span style="font-size: 1.5rem; display: flex; align-items: center;">
-      Füd
-    </span>
+  <header class="header py-3">
+    <div class="wrapper d-flex justify-between items-center">
+      <a href="/" class="logo">Füd</a>
+      </div>
   </header>
 
   <main>
-    <section class="section">
-      <div style="display: flex; justify-content: space-between; align-items: stretch;">
-        <div style="flex: 1; padding-right: 1rem;">
-          <h1 class="page-title">
-            The smart nutrition tracking app.
-          </h1>
-          <div class="spacer-xsmall"></div>
-          <p class="page-subtitle">
-            Built by patients to be the world's simpliest way to track your nutrients.
-          </p>
-          <div class="spacer-medium"></div>
-          <div>
-            <a href="#YOUR_APP_STORE_LINK">
-              <img class="download-button" src="download-on-the-app-store.svg" alt="Download on the App Store" />
+    <div class="wrapper pt-8 pb-12"> <section class="grid items-center section-bg p-6 md-p-8 mb-10" aria-labelledby="hero-title">
+          <div class="col-span-12 md-col-span-6"> <h1 id="hero-title" class="mb-3">
+              The smart nutrition tracking app.
+            </h1>
+            <p class="mb-4" style="font-size: 1.25rem; font-weight: 300;"> Built by patients to be the world's simplest way to track your nutrients.
+            </p>
+            <a href="#YOUR_APP_STORE_LINK" aria-label="Download Füd on the App Store">
+              <img class="download-button-img" src="download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
           </div>
-        </div>
-        <div style="flex: 1; text-align: center; background-color: var(--elevation-level3);">
-          <img src="placeholder-image.png" alt="Placeholder image" style="max-width: 100%;" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Track Calories, Macros, and Nutrients with Ease</h2>
-      <div class="spacer-small"></div>
-      <ul class="features-list">
-        <li>
-          <span class="icon" role="img" aria-label="Red apple icon">🍎</span>
-          <div>
-            <strong>Log Foods Effortlessly</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              Quickly add meals using our vast food database or simply scan barcodes. Perfect for your daily food diary.
-            </span>
+          <div class="col-span-12 md-col-span-6 mt-6 md-mt-0 hero-image-container p-4"> <img class="hero-image" src="placeholder-image.png" alt="Füd app interface showing nutrition tracking" />
           </div>
-        </li>
-        <li>
-          <span class="icon" role="img" aria-label="Bar chart icon">📊</span>
-          <div>
-            <strong>Monitor Key Nutrients & Macros</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              Track calories, macronutrients (protein, carbs, fat), vitamins, and minerals like iron against your
-              personal health goals.
-            </span>
+        </section>
+
+        <section class="section-bg p-6 md-p-8 mb-10" aria-labelledby="features-title">
+           <h2 id="features-title" class="text-center mb-8">Track Calories, Macros, and Nutrients with Ease</h2>
+           <div class="grid gap-6"> <div class="col-span-12 md-col-span-4 d-flex items-start gap-3 feature-item"> <span class="icon pt-1" role="img" aria-label="Red apple icon">🍎</span>
+               <div>
+                 <strong>Log Foods Effortlessly</strong>
+                 <span>Quickly add meals using our vast food database or simply scan barcodes. Perfect for your daily food diary.</span>
+               </div>
+             </div>
+             <div class="col-span-12 md-col-span-4 d-flex items-start gap-3 feature-item"> <span class="icon pt-1" role="img" aria-label="Bar chart icon">📊</span>
+               <div>
+                 <strong>Monitor Key Nutrients & Macros</strong>
+                 <span>Track calories, macronutrients (protein, carbs, fat), vitamins, and minerals like iron against your personal health goals.</span>
+               </div>
+             </div>
+             <div class="col-span-12 md-col-span-4 d-flex items-start gap-3 feature-item"> <span class="icon pt-1" role="img" aria-label="Checkmark icon">✔️</span>
+               <div>
+                 <strong>Visualize Your Progress</strong>
+                 <span>See daily totals and trends with intuitive charts and progress bars. Stay motivated on your journey.</span>
+               </div>
+             </div>
+           </div>
+        </section>
+
+        <section class="section-bg p-6 md-p-8 mb-10" aria-labelledby="advisor-title">
+          <h2 id="advisor-title" class="text-center mb-6">Personalized Nutrition Insights for Your Goals</h2>
+          <div class="card-bg p-5 md-p-6"> <h3 class="d-flex items-center gap-3 mb-3"><span class="icon" role="img" aria-label="Robot face icon">🤖</span> Your Personal AI Advisor</h3>
+            <p>
+              Receive personalized feedback based on your food logs and goals. Understand your eating patterns and get actionable advice to improve your nutrition, whether managing weight, ensuring adequate protein intake (e.g., for GLP-1 users or muscle gain), or supporting specific dietary needs.
+            </p>
           </div>
-        </li>
-        <li>
-          <span class="icon" role="img" aria-label="Checkmark icon">✔️</span>
-          <div>
-            <strong>Visualize Your Progress</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              See daily totals and trends with intuitive charts and progress bars. Stay motivated on your journey.
-            </span>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </section>
 
-    <div class="divider"></div>
+        <section class="section-bg p-6 md-p-8 mb-10" aria-labelledby="customization-title">
+          <h2 id="customization-title" class="text-center mb-8">Customize Your Nutrition Goals & App Experience</h2>
+          <ul class="list-unstyled grid gap-6">
+            <li class="col-span-12 md-col-span-4 d-flex items-start gap-3 customization-item"> <span class="icon pt-1" role="img" aria-label="Target icon">🎯</span>
+              <div>
+                <strong>Set Custom Goals</strong>
+                <span>Define targets for calories, macros, or any nutrient that matters to you, supporting diets like keto, high-protein, or diabetic-friendly plans.</span>
+              </div>
+            </li>
+            <li class="col-span-12 md-col-span-4 d-flex items-start gap-3 customization-item"> <span class="icon pt-1" role="img" aria-label="Half moon icon">🌓</span>
+              <div>
+                <strong>Choose Your Appearance</strong>
+                <span>Switch between Light and Dark modes anytime. (Current: Dark - Static)</span><br />
+                <button title="Theme toggle (requires JavaScript)">Toggle Theme</button>
+              </div>
+            </li>
+            <li class="col-span-12 md-col-span-4 d-flex items-start gap-3 customization-item"> <span class="icon pt-1" role="img" aria-label="Pot of food icon">🍲</span>
+              <div>
+                <strong>Manage Recipes & Meals</strong>
+                <span>Save your favorite custom meals and recipes for quick logging later. Build your personal food library.</span>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-    <section class="section">
-      <h2 class="section-title">Personalized Nutrition Insights for Your Goals</h2>
-      <div class="spacer-small"></div>
-      <div class="card">
-        <h3 style="margin-bottom: 8px;"><span role="img" aria-label="Robot face icon">🤖</span> Your Personal AI Advisor
-        </h3>
-        <p style="color: var(--on-surface-variant-color);">
-          Receive personalized feedback based on your food logs and goals. Understand your eating patterns and get
-          actionable advice to improve your nutrition, whether managing weight, ensuring adequate protein intake (e.g.,
-          for GLP-1 users or muscle gain), or supporting specific dietary needs.
-        </p>
-      </div>
-    </section>
+        <section class="text-center pt-6 pb-8" aria-labelledby="cta-title"> <h2 id="cta-title" class="mb-5">
+            Ready to sweeten your nutrition tracking?
+          </h2>
+          <a href="#YOUR_APP_STORE_LINK" class="cta-button">
+            Download Füd Now
+          </a>
+        </section>
 
-    <div class="divider"></div>
+    </div></main>
 
-    <section class="section">
-      <h2 class="section-title">Customize Your Nutrition Goals & App Experience</h2>
-      <div class="spacer-small"></div>
-      <ul class="customization-list">
-        <li>
-          <span class="icon" role="img" aria-label="Target icon">🎯</span>
-          <div>
-            <strong>Set Custom Goals</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              Define targets for calories, macros, or any nutrient that matters to you, supporting diets like keto,
-              high-protein, or diabetic-friendly plans.
-            </span>
-          </div>
-        </li>
-        <li>
-          <span class="icon" role="img" aria-label="Half moon icon">🌓</span>
-          <div>
-            <strong>Choose Your Appearance</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              Switch between Light and Dark modes anytime. (Current: Light - Static)
-            </span><br />
-            <button style="margin-top: 8px;" title="Theme toggle (requires JavaScript)">Toggle Theme</button>
-          </div>
-        </li>
-        <li>
-          <span class="icon" role="img" aria-label="Pot of food icon">🍲</span>
-          <div>
-            <strong>Manage Recipes & Meals</strong><br />
-            <span style="color: var(--on-surface-variant-color);">
-              Save your favorite custom meals and recipes for quick logging later. Build your personal food library.
-            </span>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="section" style="background-color: var(--background-color); margin-bottom: 0; padding-bottom: 40px;">
-      <h2 class="center-text" style="font-size: 1.5rem; color: var(--on-surface-color);">
-        Ready to sweeten your nutrition tracking?
-      </h2>
-      <div class="spacer-medium"></div>
-      <div class="center-text">
-        <a href="#YOUR_APP_STORE_LINK" class="cta-button">
-          <span>Download Füd Now</span>
-        </a>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <footer class="footer">
+  <footer class="footer pt-6 pb-4">
+    <div class="wrapper">
       <p>© 2025 Füd App Team. All rights reserved.</p>
-      <div class="spacer-small"></div>
-      <div class="footer-links">
-
+      <div class="footer-links mt-3">
         <a href="mailto:support@example.com?subject=Füd%20App%20Support">Support & Contact</a>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-
         <a href="privacy.html">Privacy Policy</a>
       </div>
-    </footer>
-  </main>
+    </div>
+  </footer>
 
 </body>
-
 </html>

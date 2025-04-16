@@ -1,121 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>Füd - Privacy Policy</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 2em;
-            max-width: 800px; /* Added for better readability on wider screens */
-            margin-left: auto;
-            margin-right: auto;
+        /* Add padding within the container specifically for the policy page */
+        .privacy-content {
+            padding: 2em 0; /* Add vertical padding */
         }
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #ccc; /* Style H1 */
-            padding-bottom: 0.5em;
+        .privacy-content h1,
+        .privacy-content h2,
+        .privacy-content h3 {
+             margin-top: 1.5em;
+             margin-bottom: 0.75em;
+             color: var(--color-1); /* Use main text color for headings */
         }
-        h2 {
-            color: #555;
-            border-bottom: 1px solid #eee;
+         .privacy-content h1 {
+            border-bottom: 2px solid var(--color-2); /* Use a subtle border */
             padding-bottom: 0.3em;
-            margin-top: 2em; /* Increased top margin for sections */
-        }
-        ul {
+            font-size: 2.5em; /* Slightly larger H1 */
+            color: var(--color-3); /* Use accent color for main title */
+         }
+        .privacy-content h2 {
+            border-bottom: 1px solid var(--color-2);
+            padding-bottom: 0.2em;
+            font-size: 1.75em;
+         }
+         .privacy-content p,
+         .privacy-content ul {
+            margin-bottom: 1em; /* Space between paragraphs and lists */
+            font-size: 1.1em; /* Slightly smaller text for readability */
+            line-height: 1.7;
+         }
+         .privacy-content ul {
             list-style-type: disc;
-            margin-left: 20px;
-            padding-left: 1em; /* Added padding */
-        }
-        strong {
+            margin-left: 2em; /* Indent lists */
+         }
+         .privacy-content strong,
+         .privacy-content b {
+            font-weight: bold;
+         }
+        .warning {
+            color: #d9534f; /* Red color for warnings */
             font-weight: bold;
         }
-        a {
-            color: #0066cc; /* Style links */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-section { /* Added class for specific styling */
-             margin-top: 2.5em;
-             border-top: 1px solid #eee; /* Separator line */
-             padding-top: 1.5em;
-        }
+
+         /* Ensure container padding works well */
+         .container {
+             padding: 1.5em;
+         }
+
     </style>
 </head>
+
 <body>
 
-    <h1>Privacy Policy</h1>
+    <header class="header">
+        <div class="container">
+          <h1 class="logo"><a href="index.html" style="color: var(--color-2); text-decoration: none;">Füd</a></h1>
+          <nav class="nav">
+            <a href="index.html#support">Support</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#download">Download</a>
+          </nav>
+        </div>
+      </header>
 
-    <p>Effective Date: [To Be Updated Upon Launch]</p>
+    <div class="container">
+        <div class="privacy-content"> <h1>Privacy Policy</h1>
 
-    <p>This Privacy Policy describes how Sugar ("we," "our," or "us") collects, uses, and protects your information when you use our mobile application (the "App").</p>
+            <p><strong>Effective Date:</strong> April 16, 2025</p>
+            <p>Welcome to Füd! This Privacy Policy explains how Ouro LLC ("we," "us," or "our") collects, uses, discloses, and protects your information when you use our mobile application, Füd (the "App"). Please read this policy carefully.</p>
+            <p>By using the App, you agree to the collection and use of information in accordance with this policy.</p>
 
-    <h2>1. Information We Collect</h2>
+            <h2>1. Information We Collect</h2>
+            <p>We collect the following types of information:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Your email address is required to create and manage your account, authenticate your access, and communicate with you.</li>
+                <li><strong>Nutritional & Health Data:</strong> Information you provide through the App, such as food entries, meal details, macronutrient and micronutrient intake, dietary goals, consumption history, and potentially other related metrics you choose to track.</li>
+                <li><strong>Usage Data:</strong> We may collect general information about how you interact with the App (e.g., features used, crash reports) solely for the purpose of improving app functionality and stability. This data is typically aggregated and does not directly identify you.</li>
+            </ul>
+            <p><strong>We do not collect:</strong> Your name (unless you voluntarily include it in communications), physical address, phone number, precise geolocation, or government-issued identifiers.</p>
 
-    <ul>
-        <li><strong>Email Address:</strong> Required to create an account and authenticate your access.</li>
-        <li><strong>Nutritional Data:</strong> Including your food entries, dietary goals, and consumption history.</li>
-    </ul>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect for the following purposes:</p>
+            <ul>
+                <li>To provide, operate, and maintain the App's core functionality, including tracking your nutritional intake and progress towards your goals.</li>
+                <li>To provide personalized, AI-driven nutritional insights based on the data you log.</li>
+                <li>To authenticate your account and prevent unauthorized access.</li>
+                <li>To respond to your support requests and inquiries.</li>
+                <li>To improve the App's features, performance, and user experience (using aggregated or anonymized data where possible).</li>
+                <li>To maintain your dietary history and goal tracking within the App.</li>
+                <li>To comply with legal obligations.</li>
+            </ul>
+            <p><strong>We do not sell your personal information. We do not use your personal data for targeted advertising by third parties.</strong></p>
 
-    <p><strong>We do not collect your name, physical address, or any government-issued identifiers.</strong></p>
+            <h2>3. Third-Party Services and Data Sharing</h2>
+            <p>We limit the use of third-party services to those essential for app functionality:</p>
+            <ul>
+                <li><strong>AI Insights (OpenAI):</strong> We transmit relevant nutritional data (like food logs and dietary goals, but not your email address) to OpenAI's API to generate personalized dietary insights within the App. OpenAI processes this data according to its API data usage policies, which may evolve. We recommend you review <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener noreferrer">OpenAI's API Data Usage Policies</a>. While we configure our requests according to their guidelines, we cannot control OpenAI's data handling practices.</li>
+                <li><strong>Backend Hosting & Database (e.g., Heroku, MongoDB Atlas):</strong> Your data (including email and nutritional data) is stored on servers managed by third-party cloud hosting providers (like Heroku or similar) and database providers (like MongoDB Atlas or similar). These providers are responsible for the physical security of the servers.</li>
+             </ul>
+             <p><strong>We do not use third-party analytics SDKs (like Google Analytics, Mixpanel, etc.) within the App.</strong> We do not share your personal information with data brokers, marketing partners, or advertising networks.</p>
+             <p>We may disclose your information if required by law, subpoena, or other legal process, or if we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</p>
 
-    <h2>2. How We Use Your Information</h2>
+            <h2>4. Data Storage, Security, and Retention</h2>
+            <ul>
+                <li><strong>Storage:</strong> Your data is stored using services like MongoDB Atlas, hosted on cloud infrastructure (such as Heroku or similar platforms), primarily located in the United States.</li>
+                <li><strong>Security Measures:</strong> We implement reasonable administrative and technical safeguards to protect your information. However, no internet transmission or electronic storage is 100% secure.
+                    <br>
+                    <strong class="warning">Important Security Note: Currently, we do not implement end-to-end encryption or encryption at rest for your stored nutritional data or account information within our primary database. Data transmission between the app and our backend, and between our backend and OpenAI's API, may also not be encrypted.</strong> This means there is a risk that your data could be intercepted or accessed by unauthorized parties. We are actively working towards implementing stronger encryption measures in future updates.</li>
+                <li><strong>Retention:</strong> We retain your personal data as long as your account is active. If you delete your account, we will initiate the process to permanently delete your data from our production systems within 30 days, unless retention is required for legal compliance, dispute resolution, or enforcing our agreements. Backup copies may exist for a limited period afterward before being securely deleted.</li>
+            </ul>
 
-    <p>We use your data to:</p>
-    <ul>
-        <li>Provide personalized, AI-driven nutritional insights</li>
-        <li>Improve and support app functionality</li>
-        <li>Maintain your dietary history and goal tracking</li>
-    </ul>
+            <h2>5. Your Privacy Rights</h2>
+            <p>Depending on your location (e.g., EU/UK, California), you may have certain rights regarding your personal data, including:</p>
+            <ul>
+                <li><strong>Right to Access:</strong> You can request access to the personal data we hold about you.</li>
+                <li><strong>Right to Rectification:</strong> You can request correction of inaccurate personal data.</li>
+                <li><strong>Right to Erasure (Deletion):</strong> You can request the deletion of your personal data, subject to certain exceptions. Deleting your account within the App typically initiates this process.</li>
+                <li><strong>Right to Data Portability:</strong> You may request a copy of your data in a structured, machine-readable format.</li>
+                 <li><strong>Right to Object/Restrict Processing:</strong> You may have the right to object to or request restriction of certain processing activities.</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the information below. We may need to verify your identity before processing your request.</p>
 
-    <p><strong>We do not use your data for advertising, marketing or analysis.</strong></p>
+            <h2>6. Children's Privacy</h2>
+            <p>The App is not intended for or directed at children under the age of 13 (or a higher age threshold if required by applicable law). We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately so we can delete it.</p>
 
-    <h2>3. Third-Party Services</h2>
+            <h2>7. International Data Transfers</h2>
+             <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction (e.g., the United States). By using the App, you consent to this transfer.</p>
 
-    <p>We do not use third-party SDKs or analytics tools.</p>
+            <h2>8. Data Breach Notification</h2>
+            <p>In the event of a data breach that compromises your personal information and poses a significant risk, we will take reasonable steps to notify affected users as required by applicable law. This may include notification via email or within the App.</p>
 
-    <p>We transmit your nutrition data to OpenAI's ChatGPT API to generate dietary insights. While we do not explicitly allow them to use this data to train models, it is possible that OpenAI retains and uses API data in accordance with their policies.</p>
+            <h2>9. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy within the App or via email. The "Effective Date" at the top indicates when the latest revision came into effect. Your continued use of the App after such changes constitutes your acceptance of the new Privacy Policy.</p>
 
-    <p><strong>We do not share your information with vendors, affiliates, or advertising networks.</strong></p>
+            <h2>10. Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy, your data, or exercising your privacy rights, please contact Ouro LLC by using our support contact form:</p>
+            <p>
+                <a href="https://forms.gle/1aUUGhnFJdEDjdrD6" class="btn" target="_blank" rel="noopener noreferrer">Contact us</a>
+            </p>
+            </div> </div> <footer class="footer">
+        <div class="container">
+          <p>&copy; 2025 Ouro LLC</p>
+          <div class="footer-links">
+            <a href="https://forms.gle/1aUUGhnFJdEDjdrD6">Support</a>
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
 
-    <h2>4. Data Storage and Security</h2>
-
-    <ul>
-        <li><strong>Storage:</strong> Data is stored in MongoDB and managed through a backend hosted on Heroku.</li>
-        <li><strong>Retention:</strong> Your data is retained for 30 days after account deletion, after which it is permanently removed.</li>
-        <li><strong>Encryption:</strong> We do not currently implement encryption at rest or in transit.</li>
-    </ul>
-
-    <h2>5. Your Rights</h2>
-
-    <p>If you reside in the EU/UK, California, or other applicable jurisdictions, you have the right to:</p>
-    <ul>
-        <li>Access your data</li>
-        <li>Request deletion</li>
-        <li>Request a copy of your data</li>
-    </ul>
-    <p>You may exercise these rights by contacting us at <a href="mailto:privacy@[pendingcompanywebsite]">privacy@[pendingcompanywebsite]</a>.</p>
-
-    <h2>6. Children's Privacy</h2>
-
-    <p>We do not knowingly allow users under 13. If you believe a child under 13 has provided us with personal data, contact us immediately.</p>
-
-    <h2>7. Breach Notification</h2>
-
-    <p>We maintain procedures to detect and notify affected users in the event of a data breach, as required by applicable law.</p>
-
-    <h2>8. Changes to This Policy</h2>
-
-    <p>We may update this Privacy Policy from time to time. The latest version will always be available in the app and will list the effective date up top.</p>
-
-    <div class="contact-section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy or your data, contact us at: <a href="mailto:privacy@[pendingcompanywebsite]">privacy@[pendingcompanywebsite]</a></p>
-    </div>
-
-    </body>
+</body>
 </html>

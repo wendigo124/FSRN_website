@@ -13,7 +13,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: clamp(0px, calc(16 / 680 * 100vw), 16px);
   line-height: 1.65;
   background: var(--color-4);
   color: var(--color-1);
@@ -93,12 +93,6 @@ body {
 
   .feature-box {
     flex: 1 1 30%;
-  }
-}
-
-@media (max-width: 620px) {
-  body {
-    font-size: calc(8px + (8 * ((100vw - 300px) / (620 - 300))));
   }
 }
 

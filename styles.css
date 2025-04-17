@@ -112,6 +112,10 @@ body {
   padding: 1.5rem;
 }
 
+.footer a {
+  margin-left: 0.5rem;
+}
+
 /* BRAND */
 
 .logo {
@@ -137,7 +141,6 @@ body {
 
 a {
   color: var(--color-2);
-  margin-left: .5rem;
   text-decoration: none;
 }
 

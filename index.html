@@ -3,8 +3,95 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Füd</title>
+  <title>Füd – Premium nutrient tracking for iPhone</title>
+
+  <!-- PRIMARY META -->
+  <meta name="description"
+    content="Füd is the premium, AI‑powered nutrition tracker for iPhone. Subscribe from $7.99/month or share with up to five loved ones on our privacy‑first Family plan. Track macros, micros and reach your goals in style." />
+  <link rel="canonical" href="https://myfud.io/" />
+
+  <!-- SCHEMA -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Füd",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "installUrl": "https://apps.apple.com/app/idYOUR_APP_ID",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly Individual",
+          "price": 7.99,
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 7.99,
+            "priceCurrency": "USD",
+            "billingPeriod": "P1M"
+          },
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        {
+          "@type": "Offer",
+          "name": "Yearly Individual",
+          "price": 79.99,
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 79.99,
+            "priceCurrency": "USD",
+            "billingPeriod": "P1Y"
+          },
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Family",
+          "price": 29.99,
+          "priceCurrency": "USD",
+          "description": "Owner + up to 5 additional loved ones",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 29.99,
+            "priceCurrency": "USD",
+            "billingPeriod": "P1M"
+          },
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        {
+          "@type": "Offer",
+          "name": "Yearly Family",
+          "price": 179.99,
+          "priceCurrency": "USD",
+          "description": "Owner + up to 5 additional loved ones",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 179.99,
+            "priceCurrency": "USD",
+            "billingPeriod": "P1Y"
+          },
+          "availability": "https://schema.org/OnlineOnly"
+        }
+      ],
+      "inAppPurchases": [
+        "Monthly Individual – 7.99 USD",
+        "Yearly Individual – 79.99 USD",
+        "Monthly Family – up to 6 users – 29.99 USD",
+        "Yearly Family – up to 6 users – 179.99 USD"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "ratingCount": 1200
+      }
+    }
+  </script>
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="styles.css" />
 
   <!-- FAVICON -->
@@ -18,10 +105,11 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" aria-label="Primary">
     <div class="container">
-      <h1 class="logo"><a href="index.html">Füd</a></h1>
-      <nav class="nav">
+      <h1 class="logo"><a href="/">Füd</a><span class="visually-hidden"> – Premium nutrient tracking for iPhone</span>
+      </h1>
+      <nav class="nav" aria-label="Main navigation">
         <a href="#support">Support</a>
         <a href="#features">Features</a>
         <a href="#download">Download</a>
@@ -32,11 +120,12 @@
   <section class="hero">
     <div class="container">
       <div class="logo xl spacer-s">Füd</div>
-      <h2 class="spacer-m">Your smart nutrient tracking app&nbsp;✨</h2>
+      <h2 class="spacer-m">Premium nutrient tracking for iPhone&nbsp;✨</h2>
       <p class="spacer-m left">Meet <b>Füd</b> (pronounced <i>food</i>) – your dream nutrient tracker, beautifully
         crafted and genuinely fun-to-use! We combine intuitive design with subtle AI to make tracking both powerful and
         effortless. We built it with love and hope you feel that too.</p>
-      <a href="#download" class="btn">Download</a>
+      <a href="#download" class="btn spacer-m">Download</a>
+      <p class="center secondary">Plans start at $7.99/mo</p>
     </div>
   </section>
 
@@ -46,39 +135,39 @@
       <h3>Features</h3>
       <div class="feature-row">
         <div class="feature-box">
-          <p class="spacer-s"><b>Log meals quickly&nbsp;⚡️</b></p>
+          <p class="spacer-s"><b>Log meals in seconds&nbsp;⚡️</b></p>
           <p>Effortlessly find and track foods with our <i>massive database</i>. Hit your targets without the hassle.
           </p>
         </div>
         <div class="feature-box">
-          <p class="spacer-s"><b>Get personalized insights&nbsp;✨</b></p>
-          <p>Receive <i>AI-driven insights</i> that guide you towards smarter, healthier choices based on <i>your</i>
-            goals.</p>
+          <p class="spacer-s"><b>AI-powered insights&nbsp;✨</b></p>
+          <p>Receive <i>AI-driven insights</i> that guide you towards smarter, healthier choices tailored to your goals.
+          </p>
         </div>
       </div>
 
       <!-- ROW 2 -->
       <div class="feature-row">
         <div class="feature-box">
-          <p class="spacer-s"><b>Customize your targets&nbsp;🎯</b></p>
-          <p>Easily set and adjust macro and nutrient targets to fit <i>your unique needs</i> and changing goals.</p>
+          <p class="spacer-s"><b>Custom targets&nbsp;🎯</b></p>
+          <p>Fine-tune your targets for protein, carbs, fats, and dozens more to fit your evolving needs.</p>
         </div>
         <div class="feature-box">
           <p class="spacer-s"><b>Big little details 💜</b></p>
-          <p>Repeating foods, recipe builder, barcode scanning, manual-entry. We sweated all the little details.</p>
+          <p>Barcode scanning, recipe builder, repeating foods—every interaction crafted for speed and delight.</p>
         </div>
       </div>
 
       <!-- ROW 3 -->
       <div class="feature-row">
         <div class="feature-box">
-          <p class="spacer-s"><b>Share with your family&nbsp;🤗</b></p>
-          <p>Bring the whole family! Our family plans support up to 6 members. Make nutrition a family priority.</p>
+          <p class="spacer-s"><b>Privacy-first family sharing&nbsp;🤗</b></p>
+          <p>Upgrade to Family and invite 5 loved ones—each with their own account and goals. </p>
         </div>
         <div class="feature-box">
-          <p class="spacer-s"><b>Premium support&nbsp;🤝</b></p>
-          <p>Get great support from Füd's creators! We're a <i>husband-and-wife team</i> based in the USA, standing by
-            to help you succeed.</p>
+          <p class="spacer-s"><b>Concierge-level support&nbsp;🤝</b></p>
+          <p>Get direct help from Füd's creators—a <i>husband-and-wife</i> team in the USA dedicated to your success.
+          </p>
         </div>
       </div>
     </div>
@@ -96,7 +185,8 @@
       <p>&copy; 2025 Ouro LLC</p>
       <div class="footer-links">
         <a href="https://forms.gle/1aUUGhnFJdEDjdrD6" target="_blank" rel="noopener noreferrer">Support</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank"
+          rel="noopener noreferrer">Terms of Use</a>
         <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
       </div>
     </div>

@@ -12,7 +12,7 @@
 }
 
 html {
-  font-size: clamp(0px, calc(16 / 680 * 100vw), 16px);
+  font-size: clamp(0px, calc(16 / 680 * 100vmin), 16px);
 }
 
 body {

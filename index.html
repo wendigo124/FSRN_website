@@ -94,7 +94,8 @@
   <!-- STYLES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
   <!-- FAVICON -->
@@ -123,9 +124,11 @@
   <section class="hero">
     <div class="container">
       <div class="logo xl spacer-l">Füd</div>
-      <h2 class="spacer-m"><i>The premium, no-nonsense nutrient tracker you've been dreaming about.</i></h2>
-      <p class="spacer-l">Meet <b>Füd</b> (pronounced <i>food</i>) – your dream nutrient tracker, beautifully
-        crafted and enhanced with AI to make tracking both powerful and effortless.</p>
+      <h2 class="spacer-m">
+        <i>The premium, no‑nonsense nutrient tracker you've been dreaming about.</i>
+      </h2>
+      <p class="spacer-s">Meet <b>Füd</b> (pronounced <i>food</i>), beautifully
+        crafted and enhanced with AI to make tracking nutrients both powerful and effortless.</p>
       <a href="#download" class="btn spacer-m">Download</a>
       <p class="center secondary">Plans start at $7.99/mo</p>
     </div>
@@ -133,16 +136,67 @@
 
   <section class="features" id="features">
     <div class="container">
-      <!-- ROW 1 -->
-      <h3>Why choose Füd?</h3>
+      <h3 class="spacer-m">What are you tracking?</h3>
+
+      <p class="spacer-l quote">
+        <i>&ldquo;<span id="flip-word"><span
+              class='no-italics'>🥑</span>&nbsp;Calories</span>&rdquo;</i>
+      </p>
+
+      <ul id="trackables-list" class="visually-hidden">
+        <li class="calories active">🔥 Calories</li>
+        <li class="fat">🧈 Fat</li>
+        <li class="saturated-fat">🧈 Saturated Fat</li>
+        <li class="trans-fat">🍟 Trans Fat</li>
+        <li class="polyunsaturated-fat">🐟 Polyunsaturated Fat</li>
+        <li class="monounsaturated-fat">🥑 Monounsaturated Fat</li>
+
+        <li class="protein">🍗 Protein</li>
+        <li class="carbs">🍞 Carbs</li>
+        <li class="fiber">🥦 Fiber</li>
+        <li class="sugar">🍭 Sugar</li>
+        <li class="added-sugar">🍭 Added Sugar</li>
+
+        <li class="cholesterol">❤️ Cholesterol</li>
+        <li class="sodium">🧂 Sodium</li>
+        <li class="potassium">🍌 Potassium</li>
+        <li class="calcium">🥛 Calcium</li>
+        <li class="iron">🩸 Iron</li>
+
+        <li class="vitamin-a">🥕 Vitamin A</li>
+        <li class="vitamin-c">🍊 Vitamin C</li>
+        <li class="vitamin-d">☀️ Vitamin D</li>
+      </ul>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const items = Array.from(document.querySelectorAll('#trackables-list li'));
+          const flip = document.getElementById('flip-word');
+          let idx = 0;
+
+          setInterval(() => {
+            items[idx].classList.remove('active');
+            idx = (idx + 1) % items.length;
+            items[idx].classList.add('active');
+
+            const text = items[idx].textContent;
+            const emoji = text.match(/^\S+/)[0]; // first "word" = emoji
+            const name = text.slice(emoji.length).trim(); // rest = nutrient
+
+            flip.innerHTML = `<span class="no-italics">${emoji}</span>&nbsp;${name}`;
+          }, 1600);
+        });
+      </script>
+
+      <!-- ROW 2 -->
       <div class="feature-row">
         <div class="feature-box">
-          <p class="spacer-s"><b>Log meals in seconds&nbsp;⚡️</b></p>
-          <p>Effortlessly find and track foods with our <i>massive database</i>. Hit your targets without the hassle.
+          <p class="spacer-s"><b>Log foods in seconds&nbsp;⚡️</b></p>
+          <p>Access the <i>world's largest database</i> of foods and nutrients. We make logging a joy.
           </p>
         </div>
         <div class="feature-box">
-          <p class="spacer-s"><b>AI-powered insights&nbsp;✨</b></p>
+          <p class="spacer-s"><b>Get AI-powered insights&nbsp;✨</b></p>
           <p>Receive <i>AI-driven insights</i> that guide you towards smarter, healthier choices tailored to your goals.
           </p>
         </div>
@@ -151,8 +205,8 @@
       <!-- ROW 2 -->
       <div class="feature-row">
         <div class="feature-box">
-          <p class="spacer-s"><b>Custom targets&nbsp;🎯</b></p>
-          <p>Fine-tune your targets for protein, carbs, fats, and dozens more to fit your evolving needs.</p>
+          <p class="spacer-s"><b>Set custom targets&nbsp;🎯</b></p>
+          <p>Fine-tune your targets to whatever nutrients fit your evolving needs—from calories to vitamin D</p>
         </div>
         <div class="feature-box">
           <p class="spacer-s"><b>Small but mighty details 💜</b></p>
